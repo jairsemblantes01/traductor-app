@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content" >
+  <ScrollView android:id="@+id/v_scroll"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout android:id="@+id/content_container"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content" >
+
+
+
+      <RelativeLayout android:id="@+id/page_1"
+        android:layout_marginTop="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <View   android:id="@+id/_bg__iphone_13_pro_max___3_ek2"
+          android:background="@drawable/bg_img_2"
+          android:layout_marginStart="0dp"
+          android:layout_marginTop="0dp"
+          android:layout_width="432dp"
+          android:layout_height="809dp" />
+
+        <ImageView android:id="@+id/vector_3"
+          android:src="@drawable/vector_3"
+          android:contentDescription="vector_3"
+          android:layout_marginStart="-1dp"
+          android:layout_marginTop="-1dp"
+          android:layout_width="433dp"
+          android:layout_height="246dp" />
+
+        <ImageView android:id="@+id/undraw_speech_to_text_re_8mtf_1"
+          android:src="@drawable/speech_to_text"
+          android:contentDescription="undraw_speech_to_text_re_8mtf_1"
+          android:layout_marginStart="96dp"
+          android:layout_marginTop="138dp"
+          android:layout_width="240dp"
+          android:layout_height="190dp" />
+
+
+
+
+
+        <ImageView android:id="@+id/rectangle_22"
+          android:src="@drawable/rectangle_22"
+          android:contentDescription="rectangle_22"
+          android:layout_marginStart="75dp"
+          android:layout_marginTop="606dp"
+          android:layout_width="266dp"
+          android:layout_height="43dp" />
+
+        <TextView android:id="@+id/empezar"
+          android:fontFamily="Poppins"
+          android:textStyle="bold"
+          android:textSize="24sp"
+          android:textColor="@color/white"
+          android:layout_marginLeft="149dp"
+          android:layout_marginTop="606dp"
+          android:layout_width="137dp"
+          android:layout_height="53dp"
+          android:text="Ingresar"
+          />
+
+        <View   android:id="@+id/rectangle_11"
+          android:background="@drawable/rectangle_11_shape"
+          android:layout_marginStart="154dp"
+          android:layout_marginTop="903dp"
+          android:layout_width="122dp"
+          android:layout_height="6dp" />
+
+      </RelativeLayout>
+
+
+
+      <RelativeLayout android:id="@+id/colour_palet"
+        android:layout_marginTop="-690dp"
+        android:layout_marginStart="-1219dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <View   android:id="@+id/rectangle_1"
+          android:background="@drawable/rectangle_1_shape"
+          android:layout_marginStart="0dp"
+          android:layout_marginTop="0dp"
+          android:layout_width="93.02dp"
+          android:layout_height="66.67dp" />
+
+        <View   android:id="@+id/rectangle_4"
+          android:background="@drawable/rectangle_4_shape"
+          android:layout_marginStart="93dp"
+          android:layout_marginTop="0dp"
+          android:layout_width="93.02dp"
+          android:layout_height="66.67dp" />
+
+        <View   android:id="@+id/rectangle_6"
+          android:background="@drawable/rectangle_6_shape"
+          android:layout_marginStart="93dp"
+          android:layout_marginTop="67dp"
+          android:layout_width="93.02dp"
+          android:layout_height="66.67dp" />
+
+        <View   android:id="@+id/rectangle_7"
+          android:background="@drawable/rectangle_7_shape"
+          android:layout_marginStart="93dp"
+          android:layout_marginTop="133dp"
+          android:layout_width="93.02dp"
+          android:layout_height="66.67dp" />
+
+        <View   android:id="@+id/rectangle_5"
+          android:background="@drawable/rectangle_5_shape"
+          android:layout_marginStart="186dp"
+          android:layout_marginTop="0dp"
+          android:layout_width="93.02dp"
+          android:layout_height="66.67dp" />
+
+        <View   android:id="@+id/rectangle_8"
+          android:background="@drawable/rectangle_8_shape"
+          android:layout_marginStart="186dp"
+          android:layout_marginTop="67dp"
+          android:layout_width="93.02dp"
+          android:layout_height="66.67dp" />
+
+        <View   android:id="@+id/rectangle_9"
+          android:background="@drawable/rectangle_9_shape"
+          android:layout_marginStart="186dp"
+          android:layout_marginTop="133dp"
+          android:layout_width="93.02dp"
+          android:layout_height="66.67dp" />
+
+        <View   android:id="@+id/rectangle_2"
+          android:background="@drawable/rectangle_2_shape"
+          android:layout_marginStart="0dp"
+          android:layout_marginTop="67dp"
+          android:layout_width="93.02dp"
+          android:layout_height="66.67dp" />
+
+        <View   android:id="@+id/rectangle_3"
+          android:background="@drawable/rectangle_3_shape"
+          android:layout_marginStart="0dp"
+          android:layout_marginTop="133dp"
+          android:layout_width="93.02dp"
+          android:layout_height="66.67dp" />
+
+      </RelativeLayout>
+
+    </RelativeLayout>
+
+  </ScrollView>
+</HorizontalScrollView>
