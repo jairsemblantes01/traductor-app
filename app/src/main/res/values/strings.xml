@@ -1,19 +1,11 @@
 <resources>
-  <string name="app_name">TRADUCTOR</string>
-  <!-- TODO: Remove or change this placeholder text -->
-  <string name="hello_blank_fragment">Hello blank fragment</string>
-  <string name="translated_text_hint">Translated text</string>
-  <string name="downloaded_models_label">Downloaded models: %1$s</string>
-  <string name="translate_progress">Translating&#8230;</string>
-  <string name="delete_model">Delete Model</string>
-  <string name="download_model">Download Model</string>
-  <string name="unknown_error">Unknown error occurred.</string>
-  <string name="source_text_hint">Source text</string>
-  <string name="h_img_desc">Imagen de header</string>
-  <string name="h_img_circle">circle</string>
-  <string name="const_pass">Ingrese contraseña</string>
-  <string name="const_user">Ingrese usuario</string>
-  <string name="const_btn_login">INGRESAR</string>
-  <string name="const_txt_user">Nombre de usuario</string>
-  <string name="const_txt_pass">Contraseña</string>
+  <string name="app_name">Taductor</string>
+  <string name="h_img_blue">imagen azul del header</string>
+  <string name="circle_description">shape xml</string>
+  <string name="et_login_user">Ingrese id de usuario</string>
+  <string name="et_login_mail">Ingrese email</string>
+  <string name="main_traduccion">Traductor por voz</string>
+  <string name="main_traduccion_detalle">Utiliza el grabador de voz para traducir tus textos</string>
+  <string name="main_traduccion_texto">Traductor en texto</string>
+  <string name="main_traduccion_texto_detalle">Escribe las palabras que deseas traducir</string>
 </resources>
