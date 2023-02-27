@@ -20,7 +20,7 @@
       android:id="@+id/input"
       android:layout_width="match_parent"
       android:layout_height="250dp"
-      android:hint="Enter Your Sentence"
+      android:hint="Escriba su texto a traducir"
       android:gravity="start">
 
     </EditText>
@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="3"
         android:layout_margin="5dp"
-        android:hint="SELECT"
+        android:hint="Idioma de entrada"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
         <AutoCompleteTextView
@@ -73,7 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="3"
         android:layout_margin="5dp"
-        android:hint="SELECT"
+        android:hint="Idioma de salida"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
         <AutoCompleteTextView
@@ -91,15 +91,17 @@
       android:id="@+id/translate"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="TRANSLATE">
+      android:text="Traducir">
 
     </Button>
 
     <TextView
-      android:id="@+id/output"
-      android:layout_width="match_parent"
-      android:layout_height="0dp"
-      android:layout_weight="1">
+        android:id="@+id/output"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textSize="20sp"
+        android:textStyle="bold">
 
     </TextView>
 

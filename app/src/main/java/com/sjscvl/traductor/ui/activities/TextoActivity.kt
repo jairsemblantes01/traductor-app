@@ -15,6 +15,7 @@ import com.sjscvl.traductor.databinding.ActivityTextoBinding
 import java.util.*
 
 class TextoActivity : AppCompatActivity() {
+  private val RCODE = 28
   lateinit var binding: ActivityTextoBinding
   private var items= arrayOf("Inglés","Español","Francés","Italiano","Hindi","Bengali","Gujarati","Tamil","Telugu")
   private var conditions = DownloadConditions.Builder()
