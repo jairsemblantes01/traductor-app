@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace 'com.sunayanpradhan.texttranslator'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.sunayanpradhan.texttranslator"
@@ -24,8 +24,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
         jvmTarget = '1.8'
@@ -49,4 +49,5 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
     implementation 'com.google.mlkit:translate:17.0.1'
+
 }

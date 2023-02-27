@@ -1,6 +1,9 @@
 package com.sunayanpradhan.texttranslator
 
+import android.content.Intent
 import android.os.Bundle
+import android.speech.RecognizerIntent
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -10,10 +13,13 @@ import com.google.mlkit.nl.translate.TranslateLanguage
 import com.google.mlkit.nl.translate.Translation
 import com.google.mlkit.nl.translate.TranslatorOptions
 import com.sunayanpradhan.texttranslator.databinding.ActivityMainBinding
+import java.util.*
+
 
 class MainActivity : AppCompatActivity() {
+    private val RCODE = 28
     lateinit var binding: ActivityMainBinding
-    private var items= arrayOf("English","Hindi","Bengali","Gujarati","Tamil","Telugu")
+    private var items= arrayOf("English","Español", "Hindi","Bengali","Gujarati","Tamil","Telugu")
     private var conditions = DownloadConditions.Builder()
         .requireWifi()
         .build()
@@ -67,9 +73,43 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        //audio
+        binding.btnRecord.setOnClickListener {
+            capturarVoz()
+        }
 
 
 
+
+    }
+    private fun capturarVoz() {
+        val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
+        intent.putExtra(
+            RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+            RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
+        )
+        intent.putExtra(
+            RecognizerIntent.EXTRA_LANGUAGE,
+            Locale.getDefault()
+        )
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivityForResult(intent, RCODE)
+        } else {
+            Log.e("ERROR", "Su dispositivo no admite entrada de voz")
+        }
+    }
+
+    override fun onActivityResult(
+        requestCode: Int,
+        resultCode: Int, data: Intent?
+    ) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == RCODE && resultCode == RESULT_OK && data != null) {
+            val result = data.getStringArrayListExtra(
+                RecognizerIntent.EXTRA_RESULTS
+            )
+            binding.input.setText(result!![0])
+        }
     }
 
     private fun selectFrom(): String {
@@ -79,6 +119,8 @@ class MainActivity : AppCompatActivity() {
             ""-> TranslateLanguage.ENGLISH
 
             "English"->TranslateLanguage.ENGLISH
+
+            "Español"->TranslateLanguage.SPANISH
 
             "Hindi"->TranslateLanguage.HINDI
 
@@ -105,6 +147,8 @@ class MainActivity : AppCompatActivity() {
 
             "English"->TranslateLanguage.ENGLISH
 
+            "Español"->TranslateLanguage.SPANISH
+
             "Hindi"->TranslateLanguage.HINDI
 
             "Bengali"->TranslateLanguage.BENGALI
@@ -121,6 +165,7 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
 
 }
 
