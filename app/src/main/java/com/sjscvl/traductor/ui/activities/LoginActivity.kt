@@ -35,14 +35,12 @@ class LoginActivity : AppCompatActivity() {
             progress.visibility = View.VISIBLE
             val usuario: Users? = UsersUC().getUser(txtUser)
             if (usuario != null) {
-              Log.d("key", usuario.status)
               if (usuario.status == "active") {
                 if (usuario.email == txtMail) {
                   var intent = Intent(this@LoginActivity, MainActivity::class.java)
                   intent.putExtra("nombre", usuario.name)
                   startActivity(intent)
                 } else {
-                  Log.d("key", "el mail no es el correcto")
                   toast =
                     Toast.makeText(this@LoginActivity, "El mail es incorrecto", Toast.LENGTH_LONG)
                   toast.show()

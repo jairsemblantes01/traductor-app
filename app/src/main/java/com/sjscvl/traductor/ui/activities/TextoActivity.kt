@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.RecognizerIntent
 import android.util.Log
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.google.mlkit.common.model.DownloadConditions
@@ -17,7 +18,7 @@ import java.util.*
 class TextoActivity : AppCompatActivity() {
   private val RCODE = 28
   lateinit var binding: ActivityTextoBinding
-  private var items= arrayOf("Inglés","Español","Francés","Italiano","Hindi","Bengali","Gujarati","Tamil","Telugu")
+  private var items= arrayOf("Inglés","Español","Francés","Italiano","Aleman","Portugues","Gujarati","Tamil","Telugu")
   private var conditions = DownloadConditions.Builder()
     .requireWifi()
     .build()
@@ -32,24 +33,28 @@ class TextoActivity : AppCompatActivity() {
     binding.languageTo.setAdapter(itemsAdapter)
 
     binding.translate.setOnClickListener {
+      var progress = binding.traductorProgess
       val options = TranslatorOptions.Builder()
         .setSourceLanguage(selectFrom())
         .setTargetLanguage(selectTo())
         .build()
-
+      progress.visibility = View.VISIBLE
       val universalTranslator = Translation.getClient(options)
       universalTranslator.downloadModelIfNeeded(conditions)
         .addOnSuccessListener {
           universalTranslator.translate(binding.input.text.toString())
             .addOnSuccessListener { translatedText: String ->
               binding.output.text=translatedText
+              progress.visibility = View.GONE
             }
             .addOnFailureListener { e: Exception ->
               Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
+              progress.visibility = View.GONE
             }
         }
         .addOnFailureListener { e: Exception ->
           Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
+          progress.visibility = View.GONE
         }
     }
     //audiotexto
@@ -94,8 +99,8 @@ class TextoActivity : AppCompatActivity() {
       "Español"->TranslateLanguage.SPANISH
       "Francés"->TranslateLanguage.FRENCH
       "Italiano"->TranslateLanguage.ITALIAN
-      "Hindi"->TranslateLanguage.HINDI
-      "Bengali"->TranslateLanguage.BENGALI
+      "Aleman"->TranslateLanguage.GERMAN
+      "Portugues"->TranslateLanguage.PORTUGUESE
       "Gujarati"->TranslateLanguage.GUJARATI
       "Tamil"->TranslateLanguage.TAMIL
       "Telugu"->TranslateLanguage.TELUGU
@@ -109,8 +114,8 @@ class TextoActivity : AppCompatActivity() {
       "Español"->TranslateLanguage.SPANISH
       "Francés"->TranslateLanguage.FRENCH
       "Italiano"->TranslateLanguage.ITALIAN
-      "Hindi"->TranslateLanguage.HINDI
-      "Bengali"->TranslateLanguage.BENGALI
+      "Aleman"->TranslateLanguage.GERMAN
+      "Portugues"->TranslateLanguage.PORTUGUESE
       "Gujarati"->TranslateLanguage.GUJARATI
       "Tamil"->TranslateLanguage.TAMIL
       "Telugu"->TranslateLanguage.TELUGU
