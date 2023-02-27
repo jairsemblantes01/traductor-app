@@ -1,7 +1,10 @@
 package com.sjscvl.traductor.ui.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.speech.RecognizerIntent
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.google.mlkit.common.model.DownloadConditions
@@ -9,6 +12,7 @@ import com.google.mlkit.nl.translate.TranslateLanguage
 import com.google.mlkit.nl.translate.Translation
 import com.google.mlkit.nl.translate.TranslatorOptions
 import com.sjscvl.traductor.databinding.ActivityTextoBinding
+import java.util.*
 
 class TextoActivity : AppCompatActivity() {
   lateinit var binding: ActivityTextoBinding
@@ -47,7 +51,40 @@ class TextoActivity : AppCompatActivity() {
           Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
         }
     }
+    //audiotexto
+    binding.btnRecord.setOnClickListener {
+      capturarVoz()
+    }
     // binding= DataBindingUtil.setContentView(this, R.layout.activity_texto as ActivityTextoBinding) as ActivityTextoBinding
+  }
+  private fun capturarVoz() {
+    val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
+    intent.putExtra(
+      RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+      RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
+    )
+    intent.putExtra(
+      RecognizerIntent.EXTRA_LANGUAGE,
+      Locale.getDefault()
+    )
+    if (intent.resolveActivity(packageManager) != null) {
+      startActivityForResult(intent, RCODE)
+    } else {
+      Log.e("ERROR", "Su dispositivo no admite entrada de voz")
+    }
+  }
+
+  override fun onActivityResult(
+    requestCode: Int,
+    resultCode: Int, data: Intent?
+  ) {
+    super.onActivityResult(requestCode, resultCode, data)
+    if (requestCode == RCODE && resultCode == RESULT_OK && data != null) {
+      val result = data.getStringArrayListExtra(
+        RecognizerIntent.EXTRA_RESULTS
+      )
+      binding.input.setText(result!![0])
+    }
   }
   private fun selectFrom(): String {
     return when(binding.languageFrom.text.toString()){
