@@ -9,8 +9,8 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
+            <option value="/mnt/d/progra_movil/traductor-app" />
+            <option value="/mnt/d/progra_movil/traductor-app/app" />
           </set>
         </option>
       </GradleProjectSettings>
